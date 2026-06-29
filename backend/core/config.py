@@ -31,7 +31,9 @@ class Settings(BaseSettings):
     # Security
     secret_key: str = "agentforge-super-secret-key-change-in-production"
     algorithm: str = "HS256"
-    access_token_expire_minutes: int = 60 * 24 * 7  # 7 days
+    access_token_expire_hours: int = 24
+    refresh_token_expire_days: int = 7
+    access_token_expire_minutes: int = 60 * 24 * 7  # 7 days (deprecated, use access_token_expire_hours)
 
     # LLM
     openai_api_key: Optional[str] = None
